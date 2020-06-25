@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class codeTestPIC : MonoBehaviour
 {
+    public AudioClip dIED;
+    public AudioSource audioSource;
+    public GameObject audioSource1;
+
     public GameObject BGBRED;
     public GameObject BGBLACK;
     public GameObject Textbox;
@@ -67,7 +71,7 @@ public class codeTestPIC : MonoBehaviour
                 if (Input.GetKeyDown("e"))
                 {
                     {
-
+                        
                         gametPIC1.SetActive(true);
                         gametPIC2.SetActive(false);
                         MOveCilck.checkmove = 0;
@@ -82,6 +86,8 @@ public class codeTestPIC : MonoBehaviour
                 if (Input.GetKeyDown("e"))
                 {
                     {
+                        audioSource1.SetActive(true);
+                        audioSource.PlayOneShot(dIED);
                         BGBRED.SetActive(true);
                         gametPIC1.SetActive(false);
                         gametPIC2.SetActive(true);

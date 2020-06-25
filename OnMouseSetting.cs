@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OnMouseSetting : MonoBehaviour
 {
@@ -23,5 +24,9 @@ public class OnMouseSetting : MonoBehaviour
     void OnMouseExit()
     {
         chestAnimator.SetBool("S", false);
+    }
+    void OnMouseDown()
+    {
+        SceneManager.LoadScene("option menu");
     }
 }

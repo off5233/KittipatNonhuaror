@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OnMouseSave : MonoBehaviour
+public class Moveto1 : MonoBehaviour
 {
-    [SerializeField]
-    Animator chestAnimator;
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -17,13 +16,11 @@ public class OnMouseSave : MonoBehaviour
     {
         
     }
-    void OnMouseOver()
+    void OnCollisionEnter(Collision MoveSc2)
     {
-        chestAnimator.SetBool("b", true);
+        if (MoveSc2.gameObject.name == "player")
+        {
+            SceneManager.LoadScene("s1");
+        }
     }
-    void OnMouseExit()
-    {
-        chestAnimator.SetBool("b", false);
-    }
-
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Looker : MonoBehaviour
 {
+    public AudioClip loocker;
+    public AudioSource audioSource;
+    public GameObject audioSource1;
     public GameObject BGBLACK;
     public GameObject Textbox;
     public GameObject Textchar;
@@ -75,6 +78,9 @@ public class Looker : MonoBehaviour
             if (Input.GetKeyDown("e")){
                 if (getitem == true)
                 {
+                    CHAT1.item = 1;
+                    audioSource1.SetActive(true);
+                    audioSource.PlayOneShot(loocker);
                     gameObject.SetActive(true);
                     Time.timeScale = 0;
                     getitem = false;

@@ -7,6 +7,10 @@ public class OnMousePlay : MonoBehaviour
 {
     [SerializeField]
     Animator chestAnimator;
+
+    public Animator AnimatorFade;
+
+
     void Start()
     {
         
@@ -26,6 +30,6 @@ public class OnMousePlay : MonoBehaviour
     }
     void OnMouseDown()
     {
-        SceneManager.LoadScene("Title");
+        AnimatorFade.SetBool("CheckEvent", true);
     }
 }

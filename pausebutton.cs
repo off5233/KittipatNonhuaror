@@ -31,6 +31,5 @@ public class pausebutton : MonoBehaviour
             Restart.SetActive(true);
             Quit.SetActive(true);
 
-
     }
 }

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EventPointS1 : MonoBehaviour
 {
+    public AudioClip dIED;
+    public AudioSource audioSource;
+    public GameObject audioSource1;
+
+
     public GameObject EYE;
     public GameObject BGBRED;
     public GameObject BGBLACK;
@@ -13,6 +18,7 @@ public class EventPointS1 : MonoBehaviour
     int checkcodeinput = 0;
     int checkTIME = 1;
     float timestarts1 = 0;
+    int CHECKSOUND = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +46,16 @@ public class EventPointS1 : MonoBehaviour
         {
             if (timestarts1 <= 1)
             {
+
+                    if (CHECKSOUND == 1)
+                    {
+                        audioSource1.SetActive(true);
+                        audioSource.PlayOneShot(dIED);
+                        CHECKSOUND = 2;
+                        return;
+                    }
+
+
                EYE.SetActive(true);
                BGBRED.SetActive(true);
                 timestarts1 = 0.45f * Time.deltaTime + timestarts1;
